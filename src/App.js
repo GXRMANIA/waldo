@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import start from "./firebase";
 import './App.css'
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Scoreboard from "./components/Scoreboard/Scoreboard";
 
 function App() {
@@ -22,13 +22,13 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Main scoreboard={scoreboard} setScoreboard={setScoreboard} />} />
-        <Route path="/scoreboard" element={<Scoreboard scoreboard={scoreboard}/>} />
-        </Routes>
-      </BrowserRouter>
+      <HashRouter>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Main scoreboard={scoreboard} setScoreboard={setScoreboard} />} />
+          <Route path="/scoreboard" element={<Scoreboard scoreboard={scoreboard}/>} />
+          </Routes>
+      </HashRouter>
     </div>
 
   );
