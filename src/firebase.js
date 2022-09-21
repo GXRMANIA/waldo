@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc} from "firebase/firestore";
 
 const start = (async () => {
     // Your web app's Firebase configuration
@@ -26,7 +26,51 @@ const start = (async () => {
             endY : doc.data().endY,
         }
     })
-    return data;
-});
+
+    const querySnapshot2 = await getDocs(collection(db, "kidPos"));
+    let data2 = {}
+    querySnapshot2.forEach(doc => {
+        data2 = {
+            startX : doc.data().startX,
+            startY : doc.data().startY,
+            endX : doc.data().endX,
+            endY : doc.data().endY,
+        }
+    })
+
+    
+
+    async function getScoreboard() {
+        const querySnapshot1 = await getDocs(collection(db, "users"));
+        let data1 = []
+        querySnapshot1.forEach(doc => {
+            data1.push({
+              name: doc.data().name,
+              time: doc.data().time,
+            })
+        })
+        return data1;
+
+    }
+
+    async function addUser(username, time) {
+        try {
+            const docRef = await addDoc(collection(db, "users"), {
+              name: username,
+              time: time,
+            });
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+    }
+
+    return {
+        data,
+        data2,
+        addUser,
+        getScoreboard,
+    }
+})();
 
 export default start;

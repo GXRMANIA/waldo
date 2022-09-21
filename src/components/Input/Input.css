@@ -1,0 +1,15 @@
+.input {
+    height: 100px;
+    font-family: sans-serif;
+    font-size: 1.4em;
+}
+
+.input input {
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+.input button {
+    padding: 5px 10px;
+    margin-left: 20px;
+}

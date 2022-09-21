@@ -1,0 +1,19 @@
+.task img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 100px;
+    font-family: sans-serif;
+    font-size: 1.4em;
+}
+
+.found {
+    border: 5px solid rgb(118, 255, 118);
+}

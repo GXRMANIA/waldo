@@ -1,0 +1,20 @@
+li {
+    list-style-type: none;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 1.4em;
+    margin-top: 30px;
+    background-color: #890089;
+    color: whitesmoke;
+    padding: 30px 50px;
+}
+
+.player {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}

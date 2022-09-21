@@ -1,0 +1,22 @@
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    height: 100px;
+    font-family: sans-serif;
+}
+
+.controls button {
+    border: none;
+    background-color: #3b003b;
+    color: whitesmoke;
+    padding: 10px 30px;
+    font-size: 1.6em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.controls button:hover {
+    background-color: #3b003b9c;
+    color: whitesmoke;
+}
